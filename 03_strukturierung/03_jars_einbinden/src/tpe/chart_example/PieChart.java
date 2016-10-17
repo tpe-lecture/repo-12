@@ -45,7 +45,7 @@ public final class PieChart {
 
         PiePlot3D plot = (PiePlot3D) chart.getPlot();
         plot.setForegroundAlpha(0.6f);
-        
+
         ChartPanel chartPanel = new ChartPanel(chart);
         chartPanel.setPreferredSize(new java.awt.Dimension(500, 270));
         jframe.setContentPane(chartPanel);
