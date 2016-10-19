@@ -1,4 +1,4 @@
-package bestellwesen;
+package bestellwesen.copy;
 import stammdaten.Kunde;
 
 /**

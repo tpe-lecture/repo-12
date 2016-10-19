@@ -1,4 +1,4 @@
-package buchhaltung;
+package buchhaltung.copy;
 
 
 /**

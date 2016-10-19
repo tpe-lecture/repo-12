@@ -1,4 +1,4 @@
-package bestellwesen;
+package bestellwesen.copy;
 
 /**
  * Eine Position der Bestellung.
