@@ -40,7 +40,7 @@ public class DualShock4 implements DigitalController, AnalogController {
         // TODO Auto-generated method stub
         return null;
     }
-
+//khkhkkh
     @Override
     public void up(double procentage) {
         ana.up(procentage);
