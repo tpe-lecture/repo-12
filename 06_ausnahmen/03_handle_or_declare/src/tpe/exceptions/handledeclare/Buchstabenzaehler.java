@@ -1,10 +1,10 @@
 package tpe.exceptions.handledeclare;
 
-//import java.io.BufferedReader;
-//import java.io.FileNotFoundException;
-//import java.io.FileReader;
-//import java.io.IOException;
-//import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * Anwendung, die die Buchstabenhäufigkeit in einem Text analysiert.
@@ -18,7 +18,7 @@ public class Buchstabenzaehler {
      */
     public static void main(String[] args) {
         Buchstabenzaehler bs = new Buchstabenzaehler();
-//        bs.run();
+        bs.run();
 
     }
 
@@ -29,15 +29,15 @@ public class Buchstabenzaehler {
      *      Buchstabenhäufigkeit.
      */
     private void run() {
-//        System.out.print("Bitte geben Sie den Dateinamen an: ");
-//        Scanner scanner = new Scanner(System.in);
-//        String dateiname = scanner.nextLine();
-//
-//        int[] statistik;
-//
-//        statistik = parseFile("assets/" + dateiname);
-//        printStatistik(statistik);
-//        scanner.close();
+        System.out.print("Bitte geben Sie den Dateinamen an: ");
+        Scanner scanner = new Scanner(System.in);
+        String dateiname = scanner.nextLine();
+
+        int[] statistik;
+
+        statistik = parseFile("assets/" + dateiname);
+        printStatistik(statistik);
+        scanner.close();
     }
 
     /**
@@ -48,27 +48,32 @@ public class Buchstabenzaehler {
      */
     private void printStatistik(int[] statistik) {
 
-//        int summe = 0;
-//
-//        for (int haeufigkeit : statistik) {
-//            summe += haeufigkeit;
-//        }
-//
-//        double prozentSumme = 0.0;
-//
-//        for (char c = 'a'; c <= 'z'; c++) {
-//            int anzahl = statistik[c - 'a'];
-//            double prozent = (double) anzahl / (double) summe * 100;
-//            System.out.printf("%s: %.2f%% %n", "" + c, prozent);
-//
-//            prozentSumme += prozent;
-//        }
-//
-//        if ((prozentSumme < 99.0) || (prozentSumme > 101.0)) {
-//            throw new StatistikException(Double.toString(prozentSumme));
-//        }
-//
-//        System.out.printf("Summe: %.2f%% %n", prozentSumme);
+        int summe = 0;
+
+        for (int haeufigkeit : statistik) {
+            summe += haeufigkeit;
+        }
+
+        double prozentSumme = 0.0;
+
+        for (char c = 'a'; c <= 'z'; c++) {
+            int anzahl = statistik[c - 'a'];
+            double prozent = (double) anzahl / (double) summe * 100;
+            System.out.printf("%s: %.2f%% %n", "" + c, prozent);
+
+            prozentSumme += prozent;
+        }
+
+        if ((prozentSumme < 99.0) || (prozentSumme > 101.0)) {
+            try {
+                throw new StatistikException(Double.toString(prozentSumme));
+            } catch (StatistikException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+
+        System.out.printf("Summe: %.2f%% %n", prozentSumme);
     }
 
     /**
@@ -83,22 +88,38 @@ public class Buchstabenzaehler {
     private int[] parseFile(String filename) {
 
         int[] statistik = new int['z' - 'a' + 1];
-//
-//        BufferedReader br = new BufferedReader(new FileReader(filename));
-//
-//        String line;
-//
-//        while ((line = br.readLine()) != null) {
-//            char[] chars = line.toLowerCase().toCharArray();
-//
-//            for (char c : chars) {
-//                if (('a' <= c) && (c <= 'z')) {
-//                    statistik[c - 'a']++;
-//                }
-//            }
-//        }
-//
-//        br.close();
+
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(filename));
+        } catch (FileNotFoundException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        String line;
+
+        try {
+            while ((line = br.readLine()) != null) {
+                char[] chars = line.toLowerCase().toCharArray();
+
+                for (char c : chars) {
+                    if (('a' <= c) && (c <= 'z')) {
+                        statistik[c - 'a']++;
+                    }
+                }
+            }
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        try {
+            br.close();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
 
         return statistik;
     }
