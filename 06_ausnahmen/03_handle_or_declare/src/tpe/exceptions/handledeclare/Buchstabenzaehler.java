@@ -38,7 +38,7 @@ public class Buchstabenzaehler {
         statistik = parseFile("assets/" + dateiname);
         printStatistik(statistik);
         scanner.close();
-    }
+    }//
 
     /**
      * Druckt die Statistik aus.
