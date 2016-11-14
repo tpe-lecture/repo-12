@@ -20,7 +20,7 @@ public class Buchstabenzaehler {
         Buchstabenzaehler bs = new Buchstabenzaehler();
         bs.run();
 
-    }//
+    }
 
     /**
      * Startet den Buchstabenzaehler.
