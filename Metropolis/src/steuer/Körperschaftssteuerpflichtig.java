@@ -2,5 +2,7 @@ package steuer;
 
 public interface Körperschaftssteuerpflichtig  {
 
-	public int koerperschaftssteuerpflichtig();
+	public static final int koerperschaftssteuerpflichtig = 15;
+
+	public abstract long koerperSteuerBerechnen(long besteuerung);
 }
