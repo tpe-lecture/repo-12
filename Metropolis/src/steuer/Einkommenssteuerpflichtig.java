@@ -1,5 +1,5 @@
 package steuer;
 
 public interface Einkommenssteuerpflichtig {
-	public int einkommenssteuer();
+	public abstract int einkommenssteuer();
 }
