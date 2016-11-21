@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import tpe.enumeration.own.Wuerfel;
+import tpe.enumeration.own.WuerfelTyp;
 
 /**
  * Test für die Würfel.
@@ -13,6 +14,12 @@ public class TestWuerfel {
 
     /** Anzahl der Durchläufe (Gesetz der großen Zahl!). */
     private static final int RUNS = 10000000;
+    public void fairness(){
+        for(WuerfelTyp typ : WuerfelTyp.valueOf(arg0)){
+           Wuerfel w = new Wuerfel(typ);
+           internal TestFairness;
+        }
+    }
 
     /**
      * Testet die Fairness.

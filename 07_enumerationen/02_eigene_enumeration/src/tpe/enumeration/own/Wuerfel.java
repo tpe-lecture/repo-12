@@ -5,7 +5,7 @@ import java.util.Random;
 /**
  * Ein einfacher Würfel.
  */
-public class Wuerfel {
+public class Wuerfel   {
 
     /** 4-seitiger Würfel. */
     public static final int D4 = 4;
@@ -20,29 +20,34 @@ public class Wuerfel {
     public static final int D10 = 10;
 
     /** 12-seitiger Würfel. */
-    public static final int D12 = 13;
+    public static final int D12 = 12;
 
-    /** Zufallszahlengenerator. */
-    private final Random rnd = new Random();
+
 
     /** Anzahl der Seiten des Würfels. */
-    private final int numSides;
+   // public  int numSides;
+    private final Random rnd = new Random();
+    private final WuerfelTyp typ;
 
     /**
      * Einen neuen Würfel anlegen.
-     *
-     * @param numSides Anzahl der Seiten des Würfels.
+     * WuerfelTyp
+     * @param numSides der Seiten des Würfels.
      */
-    public Wuerfel(int numSides) {
-        this.numSides = numSides;
+    public Wuerfel( WuerfelTyp typ) {
+        //this.numSides = numSides;
+        this.typ = typ;
     }
+
 
     /**
      * Den Würfel werfen.
      *
      * @return Ergebnis des Wurfes.
      */
+
     public int roll() {
-        return rnd.nextInt(numSides) + 1;
+        return rnd.nextInt(typ.getSeiten()) + 1;
     }
+
 }
