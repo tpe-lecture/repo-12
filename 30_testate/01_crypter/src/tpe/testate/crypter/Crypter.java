@@ -29,7 +29,6 @@ package tpe.testate.crypter;
  *  das Leerzeichen erlaubt.
  */
 public interface Crypter {
-
     /**
      * Verschlüsselt den gegebenen Text. Enthält die Eingabe Großbuchstaben,
      * so werden diese in Kleinbuchstaben umgewandelt. Ungültige Zeichen
@@ -39,6 +38,7 @@ public interface Crypter {
      * @return Verschlüsselter Text.
      */
     String encrypt(String input);
+
 
     /**
      * Entschlüsselt den gegebenen Text. Enthält die Eingabe Großbuchstaben,
