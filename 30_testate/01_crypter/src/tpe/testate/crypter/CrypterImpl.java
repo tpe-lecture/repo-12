@@ -2,7 +2,7 @@ package tpe.testate.crypter;
 
 public class CrypterImpl implements Crypter {
 	/**
-	Buchstaben und Zahlen die gültig sind, sind hier mit einem final String gegeben.
+	Buchstaben und Zahlen, die gültig sind, sind hier mit einem final String gegeben.
 	**/
 
 	private final String stringAllowsChars = "abcdefghijklmnopqrstuvwxyz0123456789 ";
