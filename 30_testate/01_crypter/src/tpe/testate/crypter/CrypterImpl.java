@@ -1,11 +1,12 @@
 package tpe.testate.crypter;
 
 public class CrypterImpl implements Crypter {
+	
 	/**
 	Buchstaben und Zahlen, die gültig sind, sind hier mit einem final String gegeben.
 	**/
-
 	private final String stringAllowsChars = "abcdefghijklmnopqrstuvwxyz0123456789 ";
+	
 	/**
 	Die Methode encrypt verschlüsselt, dass was eingegeben wird, indem sie die bei return die 
 	Methode replace aufruft die das input verschlüsselt.
@@ -15,6 +16,7 @@ public class CrypterImpl implements Crypter {
 		input = input.toLowerCase();
 		return replace(input);
 	}
+	
 	/**
 	Die Methode entschlüsselt und schmeißt eine Exception IllegalArgumentException.
 	**/
@@ -31,6 +33,7 @@ public class CrypterImpl implements Crypter {
 
 		return replace(input);
 	}
+	
 	/**
 	Die methode replace, vertauscht zeichen durch eine Zahl oder buchstabe und überspringt invalide buchstaben.
 	**/
@@ -79,6 +82,7 @@ public class CrypterImpl implements Crypter {
 		}
 		return result;
 	}
+	
 	/**
 	Bei dieser Methode gibt die Methode entweder false aus, wenn invalide buchstaben überspringt werden oder ein true, 
 	wenn es nicht der fall sein sollte.
