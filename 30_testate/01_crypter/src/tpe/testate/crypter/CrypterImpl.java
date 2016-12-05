@@ -8,8 +8,9 @@ public class CrypterImpl implements Crypter {
 	private final String stringAllowsChars = "abcdefghijklmnopqrstuvwxyz0123456789 ";
 	
 	/**
-	Die Methode encrypt verschlüsselt, dass was eingegeben wird, indem sie die bei return die 
+	*@param Die Methode encrypt verschlüsselt, dass was eingegeben wird, indem sie die bei return die 
 	Methode replace aufruft die das input verschlüsselt.
+	*@return verschlüsseltes input.
 	**/
 	@Override
 	public String encrypt(String input) {
@@ -18,7 +19,8 @@ public class CrypterImpl implements Crypter {
 	}
 	
 	/**
-	Die Methode entschlüsselt und schmeißt eine Exception IllegalArgumentException.
+	*@exception Die Methode entschlüsselt und throws eine Exception IllegalArgumentException.
+	*@return entschlüsselter input
 	**/
 	@Override
 	public String decrypt(String input) throws IllegalArgumentException {
@@ -35,7 +37,8 @@ public class CrypterImpl implements Crypter {
 	}
 	
 	/**
-	Die methode replace, vertauscht zeichen durch eine Zahl oder buchstabe und überspringt invalide buchstaben.
+	*@param Die methode replace, vertauscht zeichen durch eine Zahl oder buchstabe und überspringt invalide buchstaben.
+	*@return result
 	**/
 	private String replace(String input) {
 		String result = "";
@@ -84,8 +87,9 @@ public class CrypterImpl implements Crypter {
 	}
 	
 	/**
-	Bei dieser Methode gibt die Methode entweder false aus, wenn invalide buchstaben überspringt werden oder ein true, 
+	@param Bei dieser Methode gibt die Methode entweder false aus, wenn invalide buchstaben überspringt werden oder ein true, 
 	wenn es nicht der fall sein sollte.
+	@return false od true
 	**/
 	private boolean isValidChar(Character ch) {
 		if(!stringAllowsChars.contains(ch.toString())) {
