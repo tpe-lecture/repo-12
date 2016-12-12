@@ -10,8 +10,9 @@ import de.smits_net.games.framework.image.StripedImage;
 /**
  * Ein Ufo.
  */
-public class Ufo extends AnimatedImage {
+public class Ufo extends AnimatedImage implements Runnable {
 // TODO: Runnable implementieren
+
 
     /** X-Position des Ufos. */
     private int x;
@@ -52,6 +53,22 @@ public class Ufo extends AnimatedImage {
     }
 
     // TODO: run-Methode schreiben
+    public void run(){
+        while(x < board.getWidth()){
+            x++;
+            
+            if(Thread.currentThread().isInterrupted()){
+                break;
+            }
+            try{
+                Thread.sleep(sleepTime);
+            }catch(InterruptedException e){
+                System.out.println("What is happening!!");
+                break;
+            }
+        }
+        explode();
+    }
 
     /**
      * Let the Ufo explode.

@@ -45,8 +45,8 @@ public class GameBoard extends Board {
         threads = new Thread[ufos.length];
         for (int i = 0; i < threads.length; i++) {
 // TODO: Einkommentieren
-//            threads[i] = new Thread(ufos[i]);
-//            threads[i].start();
+            threads[i] = new Thread(ufos[i]);
+            threads[i].start();
         }
 
         buttonPosition = new Point(
@@ -96,6 +96,10 @@ public class GameBoard extends Board {
             && (e.getY() <= buttonPosition.y + button.getDimension().height)) {
 
             // TODO: Threads der Ufos sauber beenden
+            for(Thread t: threads){
+                    t.interrupt();
+
+            }
         }
     }
 }

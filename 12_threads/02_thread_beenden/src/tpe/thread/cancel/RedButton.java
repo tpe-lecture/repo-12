@@ -12,5 +12,6 @@ public class RedButton extends SimpleImage {
      */
     public RedButton() {
         super("assets/red-button");
+        
     }
 }
