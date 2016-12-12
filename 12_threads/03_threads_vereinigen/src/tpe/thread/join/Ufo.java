@@ -69,6 +69,7 @@ public class Ufo extends AnimatedImage implements Runnable {
         }
 
         System.out.println("Ich habe fertig...");
+      
     }
 
     /**
