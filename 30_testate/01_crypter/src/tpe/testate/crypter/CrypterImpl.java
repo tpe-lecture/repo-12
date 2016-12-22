@@ -1,5 +1,9 @@
 package tpe.testate.crypter;
 
+	/**
+	*class CrypterImpl, besitzt die encrypt() und decrypt() methode um die eingaben enntweder zu entschlüsseln oder verschlüsseln.
+	*Desweiteren besitzt sie die Methoden replace() und isValidChar().
+	**/
 public class CrypterImpl implements Crypter {
 	
 	/**
@@ -8,8 +12,9 @@ public class CrypterImpl implements Crypter {
 	private final String stringAllowsChars = "abcdefghijklmnopqrstuvwxyz0123456789 ";
 	
 	/**
-	*@param Die Methode encrypt verschlüsselt, dass was eingegeben wird, indem sie die bei return die 
-	Methode replace aufruft die das input verschlüsselt.
+	*Die Methode encrypt verschlüsselt, dass was eingegeben wird, indem sie bei return die 
+	Methode replace() aufruft die das input verschlüsselt.
+	*@param input, dass was verschlüsselt werden soll.
 	*@return verschlüsseltes input.
 	**/
 	@Override
@@ -19,7 +24,9 @@ public class CrypterImpl implements Crypter {
 	}
 	
 	/**
-	*@exception Die Methode entschlüsselt und throws eine Exception IllegalArgumentException.
+	*Die Methode ruft die zu benötigende replace()-Methode auf um die Eingabe zu entschlüsseln.
+	*@throws IllegalArgumentsException  wenn die Einagabe illegal, bzw. ungültig ist.
+	*@param input, die zu entschlüssende Eingabe.
 	*@return entschlüsselter input
 	**/
 	@Override
@@ -37,7 +44,8 @@ public class CrypterImpl implements Crypter {
 	}
 	
 	/**
-	*@param Die methode replace, vertauscht zeichen durch eine Zahl oder buchstabe und überspringt invalide buchstaben.
+	*Die Methode replace(), vertauscht die Zeichen durch eine Zahl oder einen Buchstabe und überspringt invalide Buchstaben.
+	*@param input
 	*@return result
 	**/
 	private String replace(String input) {
@@ -87,9 +95,10 @@ public class CrypterImpl implements Crypter {
 	}
 	
 	/**
-	@param Bei dieser Methode gibt die Methode entweder false aus, wenn invalide buchstaben überspringt werden oder ein true, 
-	wenn es nicht der fall sein sollte.
-	@return false od true
+	*Bei dieser Methode gibt die Methode entweder false aus, wenn invalide Buchstaben überspringt werden oder ein true, 
+	wenn es nicht der Fall sein sollte.
+	@param ch
+	@return false oder true
 	**/
 	private boolean isValidChar(Character ch) {
 		if(!stringAllowsChars.contains(ch.toString())) {
